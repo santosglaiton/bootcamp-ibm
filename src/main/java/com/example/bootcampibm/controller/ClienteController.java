@@ -4,6 +4,7 @@ package com.example.bootcampibm.controller;
 import com.example.bootcampibm.domain.Cliente;
 import com.example.bootcampibm.dto.ClienteDto;
 import com.example.bootcampibm.service.ClienteService;
+import com.example.bootcampibm.service.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;

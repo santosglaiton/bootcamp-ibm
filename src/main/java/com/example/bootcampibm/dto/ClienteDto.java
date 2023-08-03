@@ -25,5 +25,6 @@ public class ClienteDto implements Serializable {
         email = obj.getEmail();
     }
 
-
+    public ClienteDto(int id, String nome, String email) {
+    }
 }
