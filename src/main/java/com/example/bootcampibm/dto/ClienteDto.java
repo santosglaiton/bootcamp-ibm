@@ -2,6 +2,7 @@ package com.example.bootcampibm.dto;
 
 import com.example.bootcampibm.domain.Cliente;
 import jakarta.websocket.server.ServerEndpoint;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -25,6 +26,6 @@ public class ClienteDto implements Serializable {
         email = obj.getEmail();
     }
 
-    public ClienteDto(int id, String nome, String email) {
+    public ClienteDto(Integer id, String nome, String email) {
     }
 }
