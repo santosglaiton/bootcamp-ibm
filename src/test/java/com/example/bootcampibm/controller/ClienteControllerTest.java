@@ -63,10 +63,16 @@ public class ClienteControllerTest {
 
     @Test
     public void testFindClienteByIdExistente() throws Exception{
-        Cliente clienteEncontrado = new Cliente(1, "Joao", "joao@gmail.com");
+        Integer idCliente = 1;
+        Cliente clienteEncontrado = new Cliente(idCliente, "Joao", "joao@gmail.com");
 
-        //when()
+        when(clienteService.find(idCliente)).thenReturn(clienteEncontrado);
 
+        mockMvc.perform(MockMvcRequestBuilders.get("/clientes/1"))
+                .andExpect(status().isOk())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.id").value(1))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.nome").value("Joao"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.email").value("joao@gmail.com"));
     }
 
 }
